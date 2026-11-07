@@ -1,0 +1,305 @@
+
+/* =================================
+   DIWALI GLOW — DESIGN SYSTEM
+================================= */
+
+:root {
+    --night: #080d1c;
+    --night-light: #111a30;
+    --gold: #ffd477;
+    --gold-bright: #ffedb0;
+    --saffron: #ff9d35;
+    --white: #fffaf0;
+}
+
+/* Reset browser default spacing */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main page */
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+    background:
+        radial-gradient(
+            ellipse at 50% 75%,
+            #30203a 0%,
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            var(--night),
+            var(--night-light)
+        );
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* Main celebration area */
+
+.celebration {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 40px 20px;
+    overflow: hidden;
+}
+
+/* Decorative background */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        radial-gradient(2px 2px at 15% 25%, #fff2c6 50%, transparent 100%),
+        radial-gradient(2px 2px at 75% 20%, #ffd477 50%, transparent 100%),
+        radial-gradient(2px 2px at 85% 65%, #fff2c6 50%, transparent 100%),
+        radial-gradient(2px 2px at 25% 75%, #ffd477 50%, transparent 100%);
+    background-size: 350px 350px;
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+/* Main content */
+
+.hero {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Small heading */
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+/* Main heading */
+
+h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 9vw, 100px);
+    font-weight: 400;
+    letter-spacing: -3px;
+    background: linear-gradient(
+        120deg,
+        #fff4c9,
+        #ffc65d,
+        #fff0b2
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 25px #ffc65d44);
+}
+
+/* Supporting text */
+
+.subtitle {
+    color: #d4c8ba;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-top: 18px;
+}
+
+/* Diya area */
+
+.diya-container {
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 15px 0;
+}
+
+/* Flame */
+
+.flame {
+    width: 43px;
+    height: 75px;
+    position: relative;
+    background: linear-gradient(
+        to top,
+        #ff6a00,
+        #ffbd45,
+        #fff5b0
+    );
+    border-radius: 50% 50% 45% 45%;
+    transform: rotate(45deg);
+    box-shadow:
+        0 0 20px #ff9d35,
+        0 0 55px #ff9d3588,
+        0 0 100px #ff9d3544;
+    animation: flicker 1.2s ease-in-out infinite alternate;
+}
+
+/* Diya bowl */
+
+.diya {
+    width: 180px;
+    height: 75px;
+    position: relative;
+    margin-top: -4px;
+    border-radius: 10% 10% 50% 50% / 15% 15% 85% 85%;
+    background: linear-gradient(
+        to bottom,
+        #ffe39a,
+        #d98227 45%,
+        #783b17
+    );
+    border-bottom: 5px solid #54280f;
+    box-shadow:
+        0 12px 25px #0008,
+        0 0 35px #ffae4266;
+}
+
+/* Light surrounding the diya */
+
+.diya-glow {
+    position: absolute;
+    width: 240px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ffb44322;
+    filter: blur(35px);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Interactive button */
+
+button {
+    border: 1px solid #ffcf78;
+    padding: 15px 38px;
+    border-radius: 50px;
+    background: linear-gradient(
+        135deg,
+        #ffda91,
+        #f3a83f
+    );
+    color: #241507;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 0 25px #ffba5055;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px #ffba50aa;
+}
+
+button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 5px;
+}
+
+/* Message */
+
+.message {
+    margin-top: 25px;
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-style: italic;
+}
+
+/* Animations */
+
+@keyframes flicker {
+    from {
+        transform: rotate(43deg) scale(1);
+        opacity: 0.9;
+    }
+
+    to {
+        transform: rotate(47deg) scale(1.08);
+        opacity: 1;
+    }
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 0.9;
+    }
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+
+    .eyebrow {
+        letter-spacing: 4px;
+        font-size: 10px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .diya-container {
+        height: 230px;
+    }
+
+    .diya {
+        width: 150px;
+        height: 65px;
+    }
+
+    .flame {
+        width: 35px;
+        height: 65px;
+    }
+
+    button {
+        padding: 13px 30px;
+    }
+}
+
+
+/* Enhanced diya lighting state */
+
+.flame {
+    transition: filter 0.4s ease, opacity 0.4s ease;
+}
+
+.flame.lit {
+    filter: brightness(1.5);
+    box-shadow:
+        0 0 30px #ff9d35,
+        0 0 75px #ff9d35,
+        0 0 130px #ff9d3588;
+    animation: flicker 0.7s ease-in-out infinite alternate;
+}
+
+.diya {
+    transition: box-shadow 0.4s ease;
+}
+
+.flame.lit ~ .diya {
+    box-shadow:
+        0 12px 25px #0008,
+        0 0 55px #ffae42aa;
+}
